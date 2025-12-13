@@ -20,19 +20,19 @@ int main(int argc, char *argv[]) {
     return 1;
   }
   int a = 1;
-  while(a){
-    int len = 0;
-    size_t buffer_size = BUFFER_SIZE;
-    char *buffer = malloc(buffer_size);
-    while ((c = getchar()) != EOF && c != '\n') {
-      if (len + 1>= buffer_size) {
-  	      buffer_size *= 2;
-  	      char *new_buffer = realloc(buffer, buffer_size);
-	      if (!new_buffer) {
-		  free(buffer);
-		  return 1;
-	      }
-	      buffer = new_buffer;
+while(a){
+  int len = 0;
+  size_t buffer_size = BUFFER_SIZE;
+  char *buffer = malloc(buffer_size);
+  while ((c = getchar()) != EOF && c != '\n') {
+    if (len + 1>= buffer_size) {
+	    buffer_size *= 2;
+	    char *new_buffer = realloc(buffer, buffer_size);
+	    if (!new_buffer) {
+		free(buffer);
+		return 1;
+	    }
+	    buffer = new_buffer;
 	}
   }
     buffer[len] = '\0';
@@ -55,10 +55,9 @@ int main(int argc, char *argv[]) {
     }
     
     if (f) {
-	putchar('0');
         printf("%s\n", buffer);
       }
-}
+    }
 
     fclose(file);
     return 0;

@@ -3,12 +3,13 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  int num_lines = 0; //флаg для нумерации строк
-  char **filenames = NULL;
+  int num_lines = 0; /*флаaг для нумерации строк*/
+  char **filenames = NULL; /*для хранения имен файлов*/
   int file_count = 0;
 
+  /*разбиваем аргументы*/
   for (int i = 1; i < argc; i++) {
-    if (strcmp(argv[i], "-n") == 0) { 
+    if (strcmp(argv[i], "-n") == 0) { /*нумерация строк*/
         num_lines = 1;
     }
     else { 
@@ -18,6 +19,7 @@ int main(int argc, char *argv[]) {
   }
   
   int line_count = 1;
+    /*обрабатываем файлы из аргументов*/
   for (int i = 0; i < file_count; i++) {
     FILE *file;
 
